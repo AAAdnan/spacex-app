@@ -5,7 +5,17 @@ export const LaunchCard = ({ launchData }) => {
     console.log(launchData)
 
     return(
-        <p>testing</p>
+        <div key={launchData.id}>
+            <p>
+                {launchData.name}
+            </p>
+            <p>
+                {launchData.data_local}
+            </p>
+            <p>
+                {launchData.details}
+            </p>
+        </div>
     )
 
 }

@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import { Launch } from './components/Launch'
+import { LaunchList } from './components/LaunchList'
 import './App.css';
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
         >
           Learn React
         </a>
-        <Launch />
+        <LaunchList />
       </header>
     </div>
   );

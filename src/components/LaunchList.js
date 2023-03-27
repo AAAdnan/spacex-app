@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { LaunchCard } from './LaunchCard'
 
-export const Launch = () => {
+export const LaunchList = () => {
 
     const [launches, setLaunches ] = useState([])
+
+    //Space X API Call Launch Controller
 
     const getLaunchData = async () => {
         try {   
@@ -22,7 +24,6 @@ export const Launch = () => {
 
     return(
         <>
-        <div>{JSON.stringify(launches, null, 2)}</div>
        {
            launches.map(launchData =>(
                <LaunchCard launchData={launchData} />
