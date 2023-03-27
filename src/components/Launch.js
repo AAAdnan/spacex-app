@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { LaunchCard } from './LaunchCard'
 
 export const Launch = () => {
 
-    const [launches, setLaunches ] = useState('')
+    const [launches, setLaunches ] = useState([])
 
     const getLaunchData = async () => {
         try {   
@@ -20,7 +21,15 @@ export const Launch = () => {
 
 
     return(
+        <>
         <div>{JSON.stringify(launches, null, 2)}</div>
+       {
+           launches.map(launchData =>(
+               <LaunchCard launchData={launchData} />
+           ))
+       }
+       </>
+       
     )
 
 }
