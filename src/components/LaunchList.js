@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { LaunchCard } from './LaunchCard'
+import styled from 'styled-components'
+
 
 export const LaunchList = () => {
 
@@ -21,16 +23,33 @@ export const LaunchList = () => {
         getLaunchData()
     },[])
 
+    const getUpcomingLaunches = () => {
+        let upcomingLaunches = launches.filter(launch => launch.upcoming)
+
+        console.log(upcomingLaunches)
+    }
+
 
     return(
         <>
-       {
-           launches.map(launchData =>(
-               <LaunchCard launchData={launchData} />
-           ))
-       }
+        <LaunchListWrapper>
+        <button onClick={getUpcomingLaunches}>Show Upcoming Launches</button>
+            {
+                launches.map(launchData =>(
+                    <LaunchCard launchData={launchData} />
+                ))
+            }
+       </LaunchListWrapper>
        </>
        
     )
 
 }
+
+const LaunchListWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  justify-items: center;
+  margin: 2rem auto;
+`;
