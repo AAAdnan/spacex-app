@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import { Launch } from './components/Launch'
 import './App.css';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         >
           Learn React
         </a>
+        <Launch />
       </header>
     </div>
   );
