@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import React, { useState, useEffect } from "react";
+import { Link } from 'react-router-dom'
 import Tilt from 'react-parallax-tilt';
 
 
@@ -17,11 +18,14 @@ export const LaunchCard = ( { launchData} ) => {
   return (
     <> 
      <Tilt>
+        <StyledLink to={`/launches/${launchData.id}`}>
         <CardContent key={launchData.id}>
                 <CardHeader>{launchData.name}</CardHeader>
                 <CardDate>{convertedData(launchData.date_local)}</CardDate>
                 <CardInfo>{launchData.details}</CardInfo>
+                <img src={launchData.links.patch.small} /> 
         </CardContent>
+        </ StyledLink>
         </Tilt>
     </>
   );
@@ -58,4 +62,12 @@ const CardInfo = styled.p`
      font-size: 1rem;
      color: white;
 `;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+`;
+
 
