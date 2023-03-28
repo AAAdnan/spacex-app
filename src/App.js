@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { HomePage }from './pages/HomePage'
 import { LaunchListPage }from './pages/LaunchListPage'
 import { RocketListPage }from './pages/RocketListPage'
+import { RocketCardDetailPage }from './pages/RocketCardDetailPage'
 import { Navbar } from './components/Navbar'
 import { GlobalStyle } from './globalStyles';
 import './App.css';
@@ -16,6 +17,7 @@ function App() {
           <Route exact path="/" element={<HomePage />} />
           <Route exact path="/launches" element={<LaunchListPage />}  />
           <Route exact path="/rockets" element={<RocketListPage />}  />
+          <Route path="/rockets/:id" element={<RocketCardDetailPage />} />
         </Routes>
     </div>
   );

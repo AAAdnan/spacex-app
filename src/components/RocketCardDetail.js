@@ -2,21 +2,20 @@ import styled from 'styled-components';
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-export const RocketCard = ( { rocketData } ) => {
+export const RocketCardDetail = ( { rocket } ) => {
 
-    console.log(rocketData)
+    console.log(rocket)
 
   return (
     <>  
-        <StyledLink to={`/rockets/${rocketData.id}`}>
-            <CardContent key={rocketData.id}>
-                    <img src={rocketData.flickr_images[0]} />
-                    <CardHeader>{rocketData.name}</CardHeader>
-                    <CardInfo>{rocketData.description}</CardInfo>
-                    <CardInfo>Height: {rocketData.height.feet} feet</CardInfo>
-                    <CardInfo>Weight: {rocketData.mass.kg} kg</CardInfo>
+            <CardContent key={rocket.id}>
+                    <img src={rocket.flickr_images[0]} />
+                    <CardHeader>{rocket.name}</CardHeader>
+                    <CardInfo>{rocket.description}</CardInfo>
+                    <CardInfo>Height: {rocket.height.feet} feet</CardInfo>
+                    <CardInfo>Weight: {rocket.mass.kg} kg</CardInfo>
+                    <CardInfo>First flight: {rocket.first_flight}</CardInfo>
             </CardContent>
-        </StyledLink >
     </>
   );
 };
@@ -62,11 +61,4 @@ const CardHeader = styled.h3`
 const CardInfo = styled.p`
   font-size: 1rem;
   margin: 10px;
-`;
-
-const StyledLink = styled(Link)`
-  text-decoration: none;
-  &:hover {
-    text-decoration: none;
-  }
 `;
