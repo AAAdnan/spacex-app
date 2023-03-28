@@ -1,4 +1,6 @@
-This App consists of two main pages. 
+Space X App
+
+The App consists of two main pages. 
 
 One calls the launch controller of the SpaceX Api , and enables searching throught the launches by the name and 'Upcoming' criteria. Clicking on each individual launch card, navigates to a new page that displays greater detail about the launch.
 
